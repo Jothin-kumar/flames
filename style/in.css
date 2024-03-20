@@ -40,11 +40,17 @@
     left: 50%;
     transform: translateX(-50%);
 
-    border: red 1px solid;
+    border: red 2px solid;
     background-color: transparent;
     color: white;
     padding: 10px 20px;
     margin: 10px 0;
     border-radius: 10px;
     font-size: medium;
+}
+#flames-btn:hover {
+    background-color: red;
+    border: brown 2px solid;
+    color: black;
+    cursor: pointer;
 }
