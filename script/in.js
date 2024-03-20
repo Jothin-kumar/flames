@@ -49,4 +49,13 @@ function loadedIn() {
             btn.classList.add('disabled-flames-btn')
         }
     }
+    window.resetIn = () => {
+        for (let i = 0; i < ins.length; i++) {
+            ins[i].value = ""
+            ins[i].disabled = false
+        }
+        const btn = document.getElementById("flames-btn")
+        btn.disabled = false
+        btn.classList.remove('disabled-flames-btn')
+    }
 }
