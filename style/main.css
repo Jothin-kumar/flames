@@ -46,6 +46,15 @@ body {
 
     margin: 25px 5vw;
 }
+@media screen and (orientation: portrait) {
+    #main {
+        width: 100vw;
+    }
+    .slide {
+        width: 100vw;
+        margin: 25px 0;
+    }
+}
 
 .slide.show-slide {
     height: 50vh !important;

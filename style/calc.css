@@ -11,6 +11,14 @@
     margin: 0 3px;
     font-size: xx-large;
 }
+@media screen and (orientation: portrait) {
+    .letter {
+        font-size: x-large;
+    }
+    .calc-name {
+        width: 90vw;
+    }
+}
 .strike-letter {
     text-decoration: line-through 5px red;
     animation: strike-letter 1s;
