@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+    user-select: none;
+}
+.no-js {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+#main {
+    width: 90vw;
+    height: fit-content;
+    max-height: 95vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(69, 0, 0, 0.1);
+    border-radius: 10px;
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+
+.slide {
+    width: 80vw;
+
+    background-color: rgba(0, 0, 0, .69);
+    border-radius: 10px;
+    
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    transition: height 5s;
+    position: sticky;
+
+    margin: 25px 5vw;
+}
+
+.slide.show-slide {
+    height: 50vh !important;
+}
+.slide.hide-slide {
+    height: 0;
+}
