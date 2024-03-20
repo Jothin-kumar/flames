@@ -1,0 +1,29 @@
+#result {
+    text-align: center;
+    font-size: xx-large;
+}
+#comment {
+    text-align: center;
+    font-size: large;
+    margin: 10px auto;
+    color: gray;
+}
+#reset-btn {
+    background-color: transparent;
+    margin-top: 10px;
+    color: orange;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: orangered 2px solid;
+    border-radius: 10px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#reset-btn:hover {
+    background-color: orangered;
+    border: brown 2px solid;
+    color: white;
+    cursor: pointer;
+}

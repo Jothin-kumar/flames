@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/in.css">
     <link rel="stylesheet" href="style/calc.css">
+    <link rel="stylesheet" href="style/out.css">
     <script src="script/anim.js"></script>
     <script src="script/scroll.js"></script>
     <script src="script/in.js"></script>
     <script src="script/calc.js"></script>
+    <script src="script/out.js"></script>
 </head>
 <body onload="bodyLoadedAnim(); bodyLoadedScroll(); loadedIn()">
     <noscript>
@@ -37,7 +39,13 @@
                 <div id="flames"></div>
             </div>
         </div>
-        <div class="slide hide-slide" id="out" onclick="hideElem(window.outElem); hideElem(window.calcElem)">out (click to reset)</div>
+        <div class="slide hide-slide" id="out">
+            <div class="field" id="output-field">
+                <p id="result"></p>
+                <p id="comment"></p>
+                <button id="reset-btn" onclick="reset()">Reset</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

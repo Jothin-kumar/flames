@@ -65,4 +65,6 @@ async function calc() {
         flames[ToStrikeIndex].strike()
         flames = flames.slice(ToStrikeIndex + 1).concat(flames.slice(0, ToStrikeIndex))
     }
+
+    displayOut(flames[0].value)
 }
