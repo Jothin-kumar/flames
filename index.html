@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flames Calculator</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/in.css">
     <script src="script/anim.js"></script>
     <script src="script/scroll.js"></script>
+    <script src="script/in.js"></script>
 </head>
-<body onload="bodyLoadedAnim(); bodyLoadedScroll();">
+<body onload="bodyLoadedAnim(); bodyLoadedScroll(); loadedIn()">
     <noscript>
         <style>
             #main {
@@ -18,7 +20,13 @@
         <p class="no-js">This page requires JavaScript. Enable JavaScript and refresh this page.</p>
     </noscript>
     <div id="main">
-        <div class="slide show-slide" id="in" onclick="showElem(window.calcElem)">in (click to show calc)</div>
+        <div class="slide show-slide" id="in">
+            <div id="input-field" onload="">
+                <input type="text" id="your-name" placeholder="Your Name" maxlength="20">
+                <input type="text" id="crush-name" placeholder="Crush Name" maxlength="20">
+                <button id="flames-btn">FLAMES</button>
+            </div>
+        </div>
         <div class="slide hide-slide" id="calc" onclick="showElem(window.outElem)">calc (click to show out)</div>
         <div class="slide hide-slide" id="out" onclick="hideElem(window.outElem); hideElem(window.calcElem)">out (click to reset)</div>
     </div>
