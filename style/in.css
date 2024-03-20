@@ -1,9 +1,3 @@
-#input-field {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
 #input-field > input {
     width: 100%;
     padding: 10px;
@@ -53,4 +47,10 @@
     border: brown 2px solid;
     color: black;
     cursor: pointer;
+}
+#flames-btn.disabled-flames-btn, #flames-btn:hover.disabled-flames-btn {
+    cursor: default;
+    background-color: black;
+    color: white;
+    border: brown 2px solid;
 }

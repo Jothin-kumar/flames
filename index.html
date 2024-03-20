@@ -6,9 +6,11 @@
     <title>Flames Calculator</title>
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/in.css">
+    <link rel="stylesheet" href="style/calc.css">
     <script src="script/anim.js"></script>
     <script src="script/scroll.js"></script>
     <script src="script/in.js"></script>
+    <script src="script/calc.js"></script>
 </head>
 <body onload="bodyLoadedAnim(); bodyLoadedScroll(); loadedIn()">
     <noscript>
@@ -21,13 +23,18 @@
     </noscript>
     <div id="main">
         <div class="slide show-slide" id="in">
-            <div id="input-field" onload="">
+            <div class="field" id="input-field" onload="">
                 <input type="text" id="your-name" placeholder="Your Name" maxlength="20">
                 <input type="text" id="crush-name" placeholder="Crush Name" maxlength="20">
-                <button id="flames-btn">FLAMES</button>
+                <button id="flames-btn" onclick="flamesButtonClicked()">FLAMES</button>
             </div>
         </div>
-        <div class="slide hide-slide" id="calc" onclick="showElem(window.outElem)">calc (click to show out)</div>
+        <div class="slide hide-slide" id="calc">
+            <div class="field" id="calc-field">
+                <div class="calc-name" id="name1"></div>
+                <div class="calc-name" id="name2"></div>
+            </div>
+        </div>
         <div class="slide hide-slide" id="out" onclick="hideElem(window.outElem); hideElem(window.calcElem)">out (click to reset)</div>
     </div>
 </body>

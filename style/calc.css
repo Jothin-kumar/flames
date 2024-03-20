@@ -1,0 +1,31 @@
+.calc-name {
+    font-weight: bolder;
+    color: goldenrod;
+
+    text-align: center;
+    user-select: none;
+    margin: 10px 0;
+}
+.letter {
+    display: inline-block;
+    margin: 0 3px;
+    font-size: xx-large;
+}
+.strike-letter {
+    text-decoration: line-through 5px red;
+    animation: strike-letter 1s;
+    color: yellow;
+    opacity: .5;
+}
+@keyframes strike-letter {
+    0%, 100% {
+        scale: 1;
+        color: yellow;
+        opacity: .5;
+    }
+    50% {
+        scale: .69;
+        color: red;
+        opacity: 1;
+    }
+}

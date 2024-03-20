@@ -41,7 +41,7 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
 
-    transition: height 5s;
+    transition: height 2s;
     position: sticky;
 
     margin: 25px 5vw;
@@ -52,4 +52,11 @@ body {
 }
 .slide.hide-slide {
     height: 0;
+}
+
+.field {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
