@@ -19,13 +19,13 @@
         width: 90vw;
     }
 }
-.strike-letter {
+.calc-name > .strike-letter {
     text-decoration: line-through 5px red;
-    animation: strike-letter 1s;
+    animation: strike-letter-name 1s;
     color: yellow;
     opacity: .5;
 }
-@keyframes strike-letter {
+@keyframes strike-letter-name {
     0%, 100% {
         scale: 1;
         color: yellow;
@@ -34,6 +34,34 @@
     50% {
         scale: .69;
         color: red;
+        opacity: 1;
+    }
+}
+
+#remaining-letters-count {
+    font-size: xx-large;
+    color: green;
+    text-align: center;
+
+    display: none;
+}
+
+#flames {
+    color: purple;
+    text-align: center;
+}
+#flames > .strike-letter {
+    color: violet;
+    text-decoration: line-through 5px red;
+    animation: strike-letter-flames 1s;
+}
+@keyframes strike-letter-flames {
+    0%, 100% {
+        color: violet;
+        opacity: .75;
+    }
+    50% {
+        color: blue;
         opacity: 1;
     }
 }

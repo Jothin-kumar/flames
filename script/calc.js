@@ -46,4 +46,23 @@ async function calc() {
             }
         }
     }
+
+    const remainingLettersCount = name1Letters.concat(name2Letters).filter(l => !l.striked).length || 60
+    const remainingCountElems = document.getElementById("remaining-letters-count")
+    remainingCountElems.innerText = `${remainingLettersCount} letters`
+    await sleep(500)
+    remainingCountElems.style.display = "block"
+    await sleep(500)
+
+    let flames = await letterSplit("FLAMES", document.getElementById("flames"))
+    for (let i = 0; i < 5; i++) {
+        await sleep(1500)
+        let ToStrikeIndex = (remainingLettersCount % flames.length) - 1
+        if (ToStrikeIndex < 0) {
+            ToStrikeIndex += flames.length
+        }
+        console.log(flames, ToStrikeIndex)
+        flames[ToStrikeIndex].strike()
+        flames = flames.slice(ToStrikeIndex + 1).concat(flames.slice(0, ToStrikeIndex))
+    }
 }
