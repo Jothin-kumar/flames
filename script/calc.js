@@ -26,10 +26,23 @@ async function letterSplit(name, parentElem) {
     return letters
 }
 
+function nameSimplify(name) {
+    return name.trim().replace(/  +/g, ' ')
+}
+
 async function calc() {
     showElem(calcElem)
-    const name1 = document.getElementById('your-name').value
-    const name2 = document.getElementById('crush-name').value
+    const yourName = nameSimplify(document.getElementById('your-name').value)
+    const crushName = nameSimplify(document.getElementById('crush-name').value)
+    let name1, name2
+    if (yourName.length > crushName.length) {
+        name1 = crushName
+        name2 = yourName
+    }
+    else {
+        name1 = yourName
+        name2 = crushName
+    }
     const name1Elem = document.getElementById('name1')
     const name2Elem = document.getElementById('name2')
     await sleep(2000)
