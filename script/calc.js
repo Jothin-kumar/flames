@@ -26,9 +26,7 @@ async function letterSplit(name, parentElem) {
     return letters
 }
 
-function nameSimplify(name) {
-    return name.trim().replace(/  +/g, ' ')
-}
+const nameSimplify = (name) => name.trim().replace(/  +/g, ' ')
 
 async function calc() {
     showElem(calcElem)
@@ -46,8 +44,9 @@ async function calc() {
     const name1Elem = document.getElementById('name1')
     const name2Elem = document.getElementById('name2')
     await sleep(2000)
-    const name1Letters = (await letterSplit(name1, name1Elem)).filter(l => l.value !== " ")
-    const name2Letters = (await letterSplit(name2, name2Elem)).filter(l => l.value !== " ")
+    const canStrikeCharacter = (chr) => chr !== " " && "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(chr)
+    const name1Letters = (await letterSplit(name1, name1Elem)).filter(l => canStrikeCharacter(l.value))
+    const name2Letters = (await letterSplit(name2, name2Elem)).filter(l => canStrikeCharacter(l.value))
 
     for (let i = 0; i < name1Letters.length; i++) {
         for (let j = 0; j < name2Letters.length; j++) {
