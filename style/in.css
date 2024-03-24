@@ -23,7 +23,7 @@
 #input-field > input:focus {
     outline: none;
     animation: in-outline-blink-border 2s infinite;
-    caret-color: transparent;
+    caret-color: rgba(255, 166, 0, .5);
 }
 #input-field > input::selection {
     color: red;
