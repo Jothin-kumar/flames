@@ -9,4 +9,20 @@ function bodyLoadedIn() {
             }
         })
     }
+
+    window.disableIn = () => {
+        for (let i = 0; i < ins.length; i++) {
+            ins[i].disabled = true
+        }
+        btn.disabled = true
+        btn.classList.add('disabled-flames-btn')
+    }
+    window.resetIn = () => {
+        for (let i = 0; i < ins.length; i++) {
+            ins[i].value = ""
+            ins[i].disabled = false
+        }
+        btn.disabled = false
+        btn.classList.remove('disabled-flames-btn')
+    }
 }
