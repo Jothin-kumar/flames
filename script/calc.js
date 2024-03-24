@@ -74,7 +74,6 @@ async function calc() {
         if (ToStrikeIndex < 0) {
             ToStrikeIndex += flames.length
         }
-        console.log(flames, ToStrikeIndex)
         flames[ToStrikeIndex].strike()
         flames = flames.slice(ToStrikeIndex + 1).concat(flames.slice(0, ToStrikeIndex))
     }
