@@ -19,3 +19,9 @@ function bodyLoadedScroll() {
     }
     scrollHandler()
 }
+
+window.addEventListener("resize", function() {
+    setTimeout(function() {
+        window.canAutoScroll = true
+    }, 100)
+})
