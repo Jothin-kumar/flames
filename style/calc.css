@@ -54,6 +54,9 @@
     color: purple;
     text-align: center;
 }
+#flames > .letter {
+    width: 5dvw;
+}
 #flames > .strike-letter {
     color: violet;
     text-decoration: line-through 5px red;
