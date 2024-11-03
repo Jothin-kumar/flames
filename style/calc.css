@@ -16,7 +16,7 @@
         font-size: x-large;
     }
     .calc-name {
-        width: 90vw;
+        width: 90dvw;
     }
 }
 .calc-name > .strike-letter {
@@ -43,6 +43,10 @@
     color: green;
     text-align: center;
 
+    display: none;
+}
+#remaining-letters-special-case-msg {
+    font-size: small;
     display: none;
 }
 

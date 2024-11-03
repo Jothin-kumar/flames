@@ -6,7 +6,7 @@ function bodyLoadedScroll() {
         if (window.mainElem.scrollTop < window.lastScrollY && window.calcOver) {
             window.canAutoScroll = false
         }
-        else {
+        else if (!window.calcOver){
             window.canAutoScroll = true
         }
         window.lastScrollY = window.mainElem.scrollTop
