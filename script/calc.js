@@ -66,9 +66,6 @@ async function calc() {
         document.getElementById("remaining-letters-special-case-msg").style.display = "block"
         remainingCountElems.innerText = "Special Case"
     }
-    else {
-        document.getElementById("remaining-letters-special-case-msg").style.display = "none"
-    }
     await sleep(500)
     remainingCountElems.style.display = "block"
     await sleep(500)
