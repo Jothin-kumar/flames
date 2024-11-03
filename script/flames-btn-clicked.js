@@ -1,4 +1,5 @@
 window.flamesButtonClicked = () => {
+    hideElem(document.getElementById('in'))
     if (document.getElementById('your-name').value && document.getElementById('crush-name').value) {
         calc()
         disableIn()
