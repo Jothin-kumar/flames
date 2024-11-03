@@ -12,7 +12,7 @@ body {
 }
 
 #main {
-    width: 90dvw;
+    width: fit-content;
     height: fit-content;
     max-height: 95dvh;
     position: absolute;
@@ -43,8 +43,6 @@ body {
 
     transition: height 2s;
     position: sticky;
-
-    margin: 25px 5dvw;
 }
 @media screen and (orientation: portrait) {
     #main {
@@ -52,12 +50,11 @@ body {
     }
     .slide {
         width: 100dvw;
-        margin: 25px 0;
     }
 }
 
 .slide.show-slide {
-    height: 50dvh !important;
+    height: 100dvh;
 }
 .slide.hide-slide {
     height: 0;
