@@ -12,3 +12,13 @@ function hideElem(elem) {
     elem.classList.remove('show-slide');
     elem.classList.add('hide-slide');
 }
+
+function skipAnim() {
+    window.skipAnimation = true
+}
+function showSkipAnimBtn() {
+    document.getElementById('skip-anim-btn').style.display = "block"
+}
+function hideSkipAnimBtn() {
+    document.getElementById('skip-anim-btn').style.display = "none"
+}

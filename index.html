@@ -40,13 +40,17 @@
                 <p id="remaining-letters-count"></p>
                 <p id="remaining-letters-special-case-msg">All letters got canceled! Since the periodicity of FLAMES is 60, <br><br> 62 => 2 <br> 61 => 1 <br> 60 => 0 <br><br> Therefore, 0 has the same result as 60.</p>
                 <div id="flames"></div>
+                <button id="skip-anim-btn" onclick="skipAnim()">Skip Animation</button>
             </div>
         </div>
         <div class="slide hide-slide" id="out">
             <div class="field" id="output-field">
                 <p id="result"></p>
                 <p id="comment"></p>
-                <button id="reset-btn" onclick="reset()">Reset</button>
+                <div id="out-btns-container">
+                    <button class="out-btn" id="reset-btn" onclick="reset()">Reset</button>
+                    <button class="out-btn" id="replay-btn" onclick="replay()">Replay</button>
+                </div>
             </div>
         </div>
     </div>

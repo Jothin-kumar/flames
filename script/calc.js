@@ -1,5 +1,5 @@
 async function sleep (ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
+    return new Promise(resolve => setTimeout(resolve, window.skipAnimation ? 0 : ms))
 }
 
 class letter {
@@ -44,6 +44,7 @@ async function calc() {
     const name1Elem = document.getElementById('name1')
     const name2Elem = document.getElementById('name2')
     await sleep(2000)
+    showSkipAnimBtn()
     const canStrikeCharacter = (chr) => chr !== " " && "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(chr)
     const name1Letters = (await letterSplit(name1, name1Elem)).filter(l => canStrikeCharacter(l.value))
     const name2Letters = (await letterSplit(name2, name2Elem)).filter(l => canStrikeCharacter(l.value))
@@ -80,6 +81,7 @@ async function calc() {
         flames[ToStrikeIndex].strike()
         flames = flames.slice(ToStrikeIndex + 1).concat(flames.slice(0, ToStrikeIndex))
     }
+    hideSkipAnimBtn()
 
     displayOut(flames[0].value)
 }

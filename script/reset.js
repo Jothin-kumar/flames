@@ -4,6 +4,8 @@ async function reset() {
     resetIn()
     document.getElementById("remaining-letters-special-case-msg").style.display = "none"
     window.calcOver = false
+    window.skipAnimation = false
+    showElem(document.getElementById('in'))
 
     await new Promise(resolve => setTimeout(resolve, 2000))
 
@@ -15,4 +17,17 @@ async function reset() {
     for (let i = 0; i < elemsToEmptyIds.length; i++) {
         document.getElementById(elemsToEmptyIds[i]).innerText = ""
     }
+}
+
+async function replay() {
+    const ne1 = document.getElementById('your-name')
+    const ne2 = document.getElementById('crush-name')
+    const n1 = ne1.value
+    const n2 = ne2.value
+    await reset()
+    ne1.value = n1
+    await sleep(500)
+    ne2.value = n2
+    await sleep(500)
+    window.flamesButtonClicked()
 }
