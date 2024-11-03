@@ -12,9 +12,9 @@ body {
 }
 
 #main {
-    width: 90vw;
+    width: 90dvw;
     height: fit-content;
-    max-height: 95vh;
+    max-height: 95dvh;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -32,7 +32,7 @@ body {
 
 
 .slide {
-    width: 80vw;
+    width: 80dvw;
 
     background-color: rgba(0, 0, 0, .69);
     border-radius: 10px;
@@ -44,20 +44,20 @@ body {
     transition: height 2s;
     position: sticky;
 
-    margin: 25px 5vw;
+    margin: 25px 5dvw;
 }
 @media screen and (orientation: portrait) {
     #main {
-        width: 100vw;
+        width: 100dvw;
     }
     .slide {
-        width: 100vw;
+        width: 100dvw;
         margin: 25px 0;
     }
 }
 
 .slide.show-slide {
-    height: 50vh !important;
+    height: 50dvh !important;
 }
 .slide.hide-slide {
     height: 0;
