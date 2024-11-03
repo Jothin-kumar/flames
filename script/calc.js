@@ -62,6 +62,13 @@ async function calc() {
     const remainingLettersCount = name1Letters.concat(name2Letters).filter(l => !l.striked).length || 60
     const remainingCountElems = document.getElementById("remaining-letters-count")
     remainingCountElems.innerText = `${remainingLettersCount} letters`
+    if (remainingLettersCount === 60) {
+        document.getElementById("remaining-letters-special-case-msg").style.display = "block"
+        remainingCountElems.innerText = "Special Case"
+    }
+    else {
+        document.getElementById("remaining-letters-special-case-msg").style.display = "none"
+    }
     await sleep(500)
     remainingCountElems.style.display = "block"
     await sleep(500)

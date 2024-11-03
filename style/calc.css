@@ -45,6 +45,10 @@
 
     display: none;
 }
+#remaining-letters-special-case-msg {
+    font-size: small;
+    display: none;
+}
 
 #flames {
     color: purple;
