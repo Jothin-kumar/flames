@@ -69,3 +69,14 @@
         opacity: 1;
     }
 }
+#flames > .jump-letter {
+    animation: jump-letter-flames 2s;
+}
+@keyframes jump-letter-flames {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
