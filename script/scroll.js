@@ -3,7 +3,7 @@ window.lastScrollY = 0
 
 function bodyLoadedScroll() {
     window.mainElem.addEventListener('scroll', function() {
-        if (window.mainElem.scrollTop < window.lastScrollY) {
+        if (window.mainElem.scrollTop < window.lastScrollY && window.calcOver) {
             window.canAutoScroll = false
         }
         else {
@@ -15,7 +15,7 @@ function bodyLoadedScroll() {
         if (window.canAutoScroll) {
             window.mainElem.scrollTo(0, window.mainElem.scrollHeight)
         }
-        setTimeout(scrollHandler, 100)
+        setTimeout(scrollHandler, 1)
     }
     scrollHandler()
 }
