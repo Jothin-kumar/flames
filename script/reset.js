@@ -2,6 +2,7 @@ async function reset() {
     hideElem(window.outElem)
     hideElem(window.calcElem)
     resetIn()
+    window.calcOver = false
 
     await new Promise(resolve => setTimeout(resolve, 2000))
 

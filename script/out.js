@@ -19,4 +19,6 @@ function displayOut(r) {
 
     document.getElementById('result').innerHTML = result
     document.getElementById('comment').innerHTML = comment
+
+    window.calcOver = true
 }
