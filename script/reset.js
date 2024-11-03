@@ -17,3 +17,16 @@ async function reset() {
         document.getElementById(elemsToEmptyIds[i]).innerText = ""
     }
 }
+
+async function replay() {
+    const ne1 = document.getElementById('your-name')
+    const ne2 = document.getElementById('crush-name')
+    const n1 = ne1.value
+    const n2 = ne2.value
+    await reset()
+    ne1.value = n1
+    await sleep(500)
+    ne2.value = n2
+    await sleep(500)
+    window.flamesButtonClicked()
+}

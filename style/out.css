@@ -8,20 +8,25 @@
     margin: 10px auto;
     color: gray;
 }
-#reset-btn {
+
+#out-btns-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: max-content;
+    max-width: 50dvw;
+}
+.out-btn {
     background-color: transparent;
     margin-top: 10px;
     color: orange;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: orangered 2px solid;
-    border-radius: 10px;
-
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    border-radius: 5px;
 }
-#reset-btn:hover {
+.out-btn:hover {
     background-color: orangered;
     border: brown 2px solid;
     color: white;
