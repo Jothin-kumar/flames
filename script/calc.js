@@ -55,7 +55,6 @@ async function calc() {
     const name1Elem = document.getElementById('name1')
     const name2Elem = document.getElementById('name2')
     await sleep(2000)
-    showSkipAnimBtn()
     const canStrikeCharacter = (chr) => chr !== " " && "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(chr)
     const name1Letters = (await letterSplit(name1, name1Elem)).filter(l => canStrikeCharacter(l.value))
     const name2Letters = (await letterSplit(name2, name2Elem)).filter(l => canStrikeCharacter(l.value))
@@ -83,11 +82,12 @@ async function calc() {
     await sleep(500)
 
     let flames = await letterSplit("FLAMES", document.getElementById("flames"))
+    showSkipAnimBtn()
     const getFlames = () => flames.filter(l => !l.striked)
     const getIndex = (l) => l % getFlames().length
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < remainingLettersCount; j++) {
-            if (skipAnimation) break
+            if (window.skipAnimation) break
             getFlames()[getIndex(j)].jump(j+1)
             await sleep(1000)
         }
