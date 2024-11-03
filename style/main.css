@@ -33,8 +33,9 @@ body {
 
 .slide {
     width: 80dvw;
+    margin: 1dvh 0;
 
-    background-color: rgba(0, 0, 0, .69);
+    background-color: rgba(2, 4, 29, 0.69);
     border-radius: 10px;
     
     overflow-y: scroll;
@@ -54,7 +55,7 @@ body {
 }
 
 .slide.show-slide {
-    height: 100dvh;
+    height: 90dvh;
 }
 .slide.hide-slide {
     height: 0;
