@@ -8,6 +8,7 @@ class letter {
         this.striked = false
 
         this.elem = document.createElement('div')
+        this.actualText = l
         this.elem.innerText = l
         this.elem.classList.add('letter')
         parentElem.appendChild(this.elem)
@@ -15,6 +16,16 @@ class letter {
     strike() {
         this.elem.classList.add('strike-letter')
         this.striked = true
+    }
+    jump(l=null) {
+        if (l) {
+            this.elem.innerText = l
+        }
+        this.elem.classList.add('jump-letter')
+        setTimeout(() => {
+            this.elem.classList.remove('jump-letter')
+            this.elem.innerText = this.actualText
+        }, 1000)
     }
 }
 async function letterSplit(name, parentElem) {
@@ -44,7 +55,6 @@ async function calc() {
     const name1Elem = document.getElementById('name1')
     const name2Elem = document.getElementById('name2')
     await sleep(2000)
-    showSkipAnimBtn()
     const canStrikeCharacter = (chr) => chr !== " " && "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(chr)
     const name1Letters = (await letterSplit(name1, name1Elem)).filter(l => canStrikeCharacter(l.value))
     const name2Letters = (await letterSplit(name2, name2Elem)).filter(l => canStrikeCharacter(l.value))
@@ -72,14 +82,19 @@ async function calc() {
     await sleep(500)
 
     let flames = await letterSplit("FLAMES", document.getElementById("flames"))
+    showSkipAnimBtn()
+    const getFlames = () => flames.filter(l => !l.striked)
+    const getIndex = (l) => l % getFlames().length
     for (let i = 0; i < 5; i++) {
-        await sleep(1500)
-        let ToStrikeIndex = (remainingLettersCount % flames.length) - 1
-        if (ToStrikeIndex < 0) {
-            ToStrikeIndex += flames.length
+        for (let j = 0; j < remainingLettersCount; j++) {
+            if (window.skipAnimation) break
+            getFlames()[getIndex(j)].jump(j+1)
+            await sleep(1000)
         }
-        flames[ToStrikeIndex].strike()
-        flames = flames.slice(ToStrikeIndex + 1).concat(flames.slice(0, ToStrikeIndex))
+        let toStrikeIndex = getIndex(remainingLettersCount - 1)
+        getFlames()[toStrikeIndex].strike()
+        flames = flames.slice(toStrikeIndex + 1).concat(flames.slice(0, toStrikeIndex))      
+        await sleep(1500)
     }
     hideSkipAnimBtn()
 
