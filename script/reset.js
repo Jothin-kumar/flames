@@ -4,6 +4,7 @@ async function reset() {
     resetIn()
     document.getElementById("remaining-letters-special-case-msg").style.display = "none"
     window.calcOver = false
+    window.skipAnimation = false
     showElem(document.getElementById('in'))
 
     await new Promise(resolve => setTimeout(resolve, 2000))

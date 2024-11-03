@@ -67,3 +67,21 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+#skip-anim-btn {
+    background-color: brown;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: none;
+}
+#skip-anim-btn:hover {
+    background-color: darkred;
+    color: white;
+}
