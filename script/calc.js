@@ -17,7 +17,7 @@ class letter {
         this.elem.classList.add('strike-letter')
         this.striked = true
     }
-    jump(l=null) {
+    jump(l=null, duration=100) {
         if (l) {
             this.elem.innerText = l
         }
@@ -25,7 +25,7 @@ class letter {
         setTimeout(() => {
             this.elem.classList.remove('jump-letter')
             this.elem.innerText = this.actualText
-        }, 1000)
+        }, duration)
     }
 }
 async function letterSplit(name, parentElem) {
@@ -88,8 +88,15 @@ async function calc() {
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < remainingLettersCount; j++) {
             if (window.skipAnimation) break
-            getFlames()[getIndex(j)].jump(j+1)
-            await sleep(1000)
+
+            var s;
+            if (j === 0) s = 800
+            else if (j === remainingLettersCount -1) s = 1000
+            else if ([1, remainingLettersCount - 2].includes(j)) s = 600
+            else s = 300
+
+            getFlames()[getIndex(j)].jump(j+1, s)
+            await sleep(s)
         }
         let toStrikeIndex = getIndex(remainingLettersCount - 1)
         getFlames()[toStrikeIndex].strike()
